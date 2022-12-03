@@ -1,0 +1,147 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+header {
+background-color: #666;
+padding: 30px;
+text-align: center;
+font-size: 35px;
+color: white;
+}
+nav {
+float: left;
+width: 10%;
+height: 300px;
+background: #ccc;
+padding: 20px;
+}
+nav ul {
+list-style-type: none;
+padding: 0;
+}
+#myright {
+float: right;
+width: 10%;
+height: 300px; /* only for demonstration, should be removed */
+background: #ccc;
+padding: 20px;
+}
+
+
+article {
+float: left;
+padding: 20px;
+width: 80%;
+background-color: #f1f1f1;
+height: 700px;
+}
+
+
+section:after {
+content: "";
+display: table;
+clear: both;
+}
+input[type=text] {
+
+padding: 6px 20px;
+margin: 0px 900px;
+box-sizing: border-box;
+}
+input[type=password] {
+
+padding: 6px 20px;
+margin: 0px 900px;
+box-sizing: border-box;
+}
+input[type=button] {
+
+padding: 6px 20px;
+margin: 0px 900px;
+box-sizing: border-box;
+}
+footer {
+background-color: #777;
+padding: 10px;
+text-align: center;
+color: white;
+}
+p{
+color:Blue;
+
+}
+h1{
+color:Green;
+}
+table{
+width:600px;
+background-color:Yellow;
+}
+
+
+@media (max-width: 600px) {
+nav, article {
+width: 100%;
+height: auto;
+}
+}
+img{
+height:100px;
+weight:50px;
+}
+img:hover {
+opacity: 0.3;
+height:200px;
+weight:100px;
+}
+video{
+width:300px;
+height:200px;
+}
+.formsection {
+  background: #24282e;
+  color: white;
+}
+.site-title {
+  color: white;
+}
+.input-block {
+  color: white;
+}
+.notis {
+  color: white;
+}
+.small {
+  color: white;
+}
+#t1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: solid black 1px;
+    padding: 8px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(15, 2, 83);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+tr:hover {
+    background-color:grey;
+    color: black;
+}
