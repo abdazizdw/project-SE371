@@ -1,0 +1,108 @@
+<html>
+<!--start html tag-->
+<%- include('./partial/head.ejs') %>
+<%- include('./partial/navbar.ejs') %>
+
+<link rel="stylesheet" href="/booksStyle.css">
+
+  <body>
+    <div class="d-flex"></div>
+
+    <section class="formSection">
+      
+       <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Add Book</h3>
+                        <p>Fill in the fields below.</p>
+                        <form method="post" action="/books">
+
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="authors" id="authors" placeholder="Authors" required>
+                               <div class="valid-feedback">Authors field is valid!</div>
+                               <div class="invalid-feedback">Authors field cannot be blank!</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" name="bookName" id="bookName" placeholder="Book name" required>
+                                 <div class="valid-feedback">Book name field is valid!</div>
+                                 <div class="invalid-feedback">Book name field cannot be blank!</div>
+                            </div>
+
+
+                           <div class="col-md-12">
+                              <input class="form-control" type="text" name="imgSrc" id="imgSrc" placeholder="Img Source" required>
+                               <div class="valid-feedback">Img Source field is valid!</div>
+                               <div class="invalid-feedback">Img Source field cannot be blank!</div>
+                           </div>
+
+                            <div class="form-button mt-3">
+                                <button id="add" type="submit" class="btn btn-primary">Add</button>
+
+                            </div>
+                    </form></div>
+                      <div class="form-items">
+                          <h3>Search Book</h3>
+                          <p>Fill in the fields below.</p>
+                          <form method="get" action="/books/bookname" >
+                              <div class="col-md-12">
+                                  <input class="form-control" type="text" name="bookNameSearch" id="bookNameSearch" placeholder="Book name" required>
+                                   <div class="valid-feedback">Book name field is valid!</div>
+                                   <div class="invalid-feedback">Book name field cannot be blank!</div>
+                              </div>
+  
+  
+   
+                              <div class="form-button mt-3">
+                                  <input id="add" type="submit" value="Submit" class="btn btn-primary" >Search</input>
+  
+                              </div>
+                          </form>
+                      </form>
+                    </div>
+                    
+                          </form></div>
+                              
+                       </div>
+                       
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+
+
+    <div class="card">
+  <div class="card-header">
+    Quote
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>“A reader lives a thousand lives before he dies . . . The man who never reads lives only one.”</p>
+      <footer class="blockquote-footer"> <cite title="Source Title">George R.R. Martin</cite></footer>
+    </blockquote>
+  </div>
+</div>
+      <div class="row">
+        <% books.forEach((book) => { %>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="card " style="width: 300px;">
+            <img src="img/books/the-definitive-guide.jpg" class="card-img-top" alt="Javascript, The definitive guide">
+            <div class="card-body text-center">
+              <h5 class="card-title"><%= book.authors %></h5>
+              <p class="card-text"><%= book.bookName %></p>
+              <a href="#" class="btn btn-dark btn-lg">Purchase</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    
+  </body>
+</div>
+<%- include('./partial/footer.ejs') %>
+ 
+</html>

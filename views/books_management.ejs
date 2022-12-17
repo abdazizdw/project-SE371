@@ -1,0 +1,93 @@
+<html>
+<!--start html tag-->
+<%- include('./partial/head.ejs') %>
+<%- include('./partial/navbar.ejs') %>
+
+<link rel="stylesheet" href="/manageStyle.css">
+
+<div class="d-flex"></div>
+
+  <body>
+    <div class="d-flex"></div>
+      <div class="row">
+        
+          <% if( books != undefined && books != null ){ %>
+          <script>
+            const deleteBook = (e) => {
+              let delete_promise = fetch('/books/manage/delete/' + e.id, { method: 'DELETE'})
+              delete_promise.then(response => response.json())
+              .then( data => {
+              window.location = data.redirect;
+              })
+            .catch((reject) => {
+            document.getElementById("message_delete").textContent = reject;
+            });
+          }
+
+          const update_book = (e) => {
+            let update_promise = fetch('/books/manage/' + e.id, { method: 'PATCH'})
+            update_promise.then(response => response.json())
+            .then( data => {
+            window.location = data.redirect;
+            })
+          .catch((reject) => {
+          document.getElementById("message_update").textContent = reject;
+          });
+        }
+          </script>           
+          
+      
+          <table>
+          <thead>
+            <th>ID</th><th>Name</th><th>Author</th><th>IMAGE</th><th>Delete</th><th>Update</th>
+          </thead>
+
+          <tbody>
+            <% if(books.length > 0){ %>
+            <% books.forEach((book) => { %>
+            <tr>
+              <td><%= book._id %></td>
+              <td><%= book.bookName %></td>
+              <td><%= book.authors %></td>
+              <td><%= book.imgSrc %></td>
+              <td><button id="<%= book._id %>"  onclick="deleteBook(this)" data>Delete</button></td>
+              <td>
+                          <form method="patch" action="/books/manage" >
+                            <div class="col-md-12">
+                                  <input class="form-control" type="text" name="authors" id="authors" placeholder="Authors" required>
+                                  <div class="valid-feedback">Authors field is valid!</div>
+                                  <div class="invalid-feedback">Authors field cannot be blank!</div>
+                              </div>
+
+                              <div class="col-md-12">
+                                <input class="form-control" type="text" name="bookName" id="bookName" placeholder="Book name" required>
+                                 <div class="valid-feedback">Book name field is valid!</div>
+                                 <div class="invalid-feedback">Book name field cannot be blank!</div>
+                            </div>
+
+
+                           <div class="col-md-12">
+                              <input class="form-control" type="text" name="imgSrc" id="imgSrc" placeholder="Img Source" required>
+                               <div class="valid-feedback">Img Source field is valid!</div>
+                               <div class="invalid-feedback">Img Source field cannot be blank!</div>
+                           </div>
+      
+                                <div class="form-button mt-3">
+                                  <button id="<%= book._id %>"  onclick="update_book(this)" data>Update</button>
+                                  </div>
+                          </form>
+                
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% }} %>
+
+
+    </div>
+
+  </body>
+
+  <%- include('./partial/footer.ejs') %>
+</html>

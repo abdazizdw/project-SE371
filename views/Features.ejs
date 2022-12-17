@@ -1,62 +1,8 @@
-<head>
-  <!--start head tag-->
+<%- include('./partial/head.ejs') %>
+<%- include('./partial/navbar.ejs') %>
+<link rel="stylesheet" href="/feauturesStyle.css">
 
-  <title>EBook - Statistics</title>
-  <!--add title here-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <style>
-       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
-
-  body{
-        font-family: 'Poppins', sans-serif;
-
-      background: #212529;
-    color: white;
-    }
-    h1{
-      color: white;
-      text-align: center;
-      
-    }
-    p {
-      color: white;
-    }
-    section {
-justify-content: center;    }
-    label {
-      color: white;
-    }
-
-    table, tr, td, th{
-      color: white;
-      
-    }
-  </style>
-
-</head>
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">EBook</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-              <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Features">Statistics</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/Register">Register</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 <div class="container">
 <body>
   <!--start body tag-->
@@ -78,37 +24,37 @@ justify-content: center;    }
     <tr>
       <td>Classics</td>
       <td>Asia</td>
-      <td>6425</td>
+      <td>6,425 UNITS</td>
     </tr>
 
     <tr>
       <td>Crime</td>
       <td>North America</td>
-      <td>7563</td>
+      <td>7,563 UNITS</td>
     </tr>
 
     <tr>
       <td>Fantasy</td>
       <td>Europe</td>
-      <td>5473926</td>
+      <td>5.4M UNITS</td>
     </tr>
 
     <tr>
       <td>Historical fiction</td>
       <td>Africa</td>
-      <td>5736</td>
+      <td>5,736 UNITS</td>
     </tr>
 
     <tr>
       <td>Horror</td>
       <td>Russia</td>
-      <td>235</td>
+      <td>235 UNITS</td>
     </tr>
 
     <tr>
       <td>Humour and satire</td>
       <td>South America</td>
-      <td>786</td>
+      <td>786 UNITS</td>
     </tr>
 
   </table>
@@ -125,23 +71,7 @@ justify-content: center;    }
 
 </body>
 </div>
-  <footer class="bg-dark text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4 pb-0">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-    <a class="text-white" href="https://google.com/"></a>
-  </div>
-    </section>
-    <!-- Section: Social media -->
-  </div>
-  <!-- Grid container -->
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-white" href="https://google.com/">EBook.com - Abdulrahman Al Ageeli (219110612) - Abdullah Al Zahrani (219110334)</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+
+<%- include('./partial/footer.ejs') %>
+
 </html>
